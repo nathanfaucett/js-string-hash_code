@@ -1,7 +1,7 @@
 {
-  "name": "string-hash_code",
+  "name": "@nathanfaucett/string-hash_code",
   "version": "0.0.1",
-  "description": "string hash code for the browser and node.js",
+  "description": "returns string hash code",
   "repository": {
     "type": "git",
     "url": "https://github.com/nathanfaucett/string-hash_code.git"
@@ -11,7 +11,7 @@
     "test": "npm run test-node",
     "test-node": "node ./test | ./node_modules/.bin/tap-spec",
     "test-node-raw": "node ./test",
-    "test-browser-local": "zuul --local 8080 --ui tape -- ./test"
+    "test-browser-local": "zuul --local 9999 --ui tape -- ./test"
   },
   "keywords": [
     "string-hash_code",
@@ -21,14 +21,14 @@
   "license": "MIT",
   "readmeFilename": "README.md",
   "devDependencies": {
-    "grunt": "",
-    "grunt-contrib-jshint": "^0.10.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
     "grunt-jsbeautifier": "",
     "tap-spec": "^4.1.0",
     "tape": "^4.2.0",
     "zuul": "^3.3.0"
   },
   "dependencies": {
-    "is_undefined": "git://github.com/nathanfaucett/is_undefined.git"
+    "@nathanfaucett/is_undefined": "^0.0.1"
   }
 }

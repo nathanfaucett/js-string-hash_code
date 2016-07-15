@@ -1,4 +1,4 @@
 stringHashCode
 =======
 
-string hash code for the browser and node.js
+returns string hash code

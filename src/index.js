@@ -1,4 +1,4 @@
-var isUndefined = require("is_undefined");
+var isUndefined = require("@nathanfaucett/is_undefined");
 
 
 var STRING_HASH_CACHE_MIN_STRING_LENGTH = 16,
