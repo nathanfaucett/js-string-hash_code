@@ -1,6 +1,3 @@
-var isUndefined = require("@nathanfaucett/is_undefined");
-
-
 var STRING_HASH_CACHE_MIN_STRING_LENGTH = 16,
     STRING_HASH_CACHE_MAX_SIZE = 255,
     STRING_HASH_CACHE_SIZE = 0,
@@ -21,7 +18,7 @@ function stringHashCode(string) {
 function cachedHashString(string) {
     var hash = SRTING_HASH_CACHE[string];
 
-    if (isUndefined(hash)) {
+    if (hash === undefined) {
         hash = hashString(string);
 
         if (STRING_HASH_CACHE_SIZE === STRING_HASH_CACHE_MAX_SIZE) {
@@ -29,7 +26,7 @@ function cachedHashString(string) {
             SRTING_HASH_CACHE = {};
         }
 
-        STRING_HASH_CACHE_SIZE += 1;
+        STRING_HASH_CACHE_SIZE++;
         SRTING_HASH_CACHE[string] = hash;
     }
 
@@ -38,12 +35,15 @@ function cachedHashString(string) {
 
 function hashString(string) {
     var hash = 0,
-        i = -1,
-        il = string.length - 1;
+        i, il;
 
-    while (i++ < il) {
-        hash = 31 * hash + string.charCodeAt(i) | 0;
+    for (i = 0, il = string.length; i < il; i++) {
+        hash = (31 * hash + string.charCodeAt(i)) | 0;
     }
 
-    return ((hash >>> 1) & 0x40000000) | (hash & 0xBFFFFFFF);
+    return smi(hash);
+}
+
+function smi(i32) {
+    return ((i32 >>> 1) & 0x40000000) | (i32 & 0xbfffffff);
 }

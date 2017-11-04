@@ -1,6 +1,6 @@
 {
   "name": "@nathanfaucett/string-hash_code",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "returns string hash code",
   "repository": {
     "type": "git",
@@ -8,6 +8,7 @@
   },
   "main": "src/index.js",
   "scripts": {
+    "bench": "node bench",
     "test": "npm run test-node",
     "test-node": "node ./test | ./node_modules/.bin/tap-spec",
     "test-node-raw": "node ./test",
@@ -21,6 +22,7 @@
   "license": "MIT",
   "readmeFilename": "README.md",
   "devDependencies": {
+    "benchmark": "^2.1.4",
     "grunt": "^1.0.1",
     "grunt-contrib-jshint": "^1.0.0",
     "grunt-jsbeautifier": "",
